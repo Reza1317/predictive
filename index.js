@@ -1,9 +1,7 @@
 var express = require('express');
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response){
-  response.send('hello world again from the new js; which is supposed to point to html');
-});
+app.get('/', function(request, response){response.send('hello world');});
 
 var port = process.env.PORT || 5000;
 
