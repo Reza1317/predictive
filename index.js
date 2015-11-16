@@ -1,16 +1,3 @@
-{
-  "dependencies":
-  {
-    "express":"*",
-    "body-parser":"*"
-  }
-}
-
-var express = require('express');
-var app = express.createServer(express.logger());
-
-app.get('/', function(request, response){response.send('hello world');});
-
-var port = process.env.PORT || 5000;
-
-app.listen(port,function(){console.log("Listening on" + port);});
+var port = process.env.PORT || 3000;
+app.get('/', function (req, res) {res.sendfile(__dirname + '/index.html');});
+app.listen(port, function() {console.log("Node app is running at localhost:" + app.get('port'))});
