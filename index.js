@@ -1,13 +1,10 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express.createServer(express.logger());
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+app.get('/', function(req, res){
+  res.send('hello world again from the new js; which is supposed to point to html');
+});
 
-app.get('/', function(request, response) {
-  response.send('We provide business solutions for big data')
-})
+var port = process.env.Port || 5000;
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})
+app.listen(port,function(){console.log("Listening on" + port);});
