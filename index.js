@@ -24,6 +24,7 @@ var port = process.env.Port || 5000;
 app.listen(port,function(){console.log("Listening on" + port);});
 */
 
+/*
 var http = require('http'),
     fs = require('fs');
 
@@ -38,3 +39,20 @@ fs.readFile('./index.html', function (err, html) {
         response.end();  
     }).listen(5000);
 });
+*/
+
+
+var express = require("express");
+var app     = express();
+var path    = require("path");
+
+
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/index.html'));
+});
+
+app.listen(3000);
+
+
+
+console.log("Running at Port 3000");
