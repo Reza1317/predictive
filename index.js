@@ -48,7 +48,7 @@ var path    = require("path");
 
 
 app.get('/',function(req,res){
-  res.sendFile('./index.html');
+  res.sendFile('index.html');
 });
 
 app.listen(3000);
